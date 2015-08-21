@@ -12,7 +12,9 @@ module AngryTray
         DNSSD.resolve!(browse_result) do |resolve_result|
           puts 'resolve'
           blk.call(Addrinfo.ip(resolve_result.target))
+          break
         end
+        break
       end
     end
   end

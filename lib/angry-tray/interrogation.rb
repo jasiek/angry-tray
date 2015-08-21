@@ -13,11 +13,9 @@ class AngryTray::Interrogation
   end
 
   def fetch_name
-    puts 'pre get'
-    response = @manager.get(['sysName.0'])
-    puts 'post get'
+    response = @manager.get(['1.3.6.1.2.1.25.3.2.1.3.1'])
     response.each_varbind do |vb|
-      puts "#{vb.name.to_s}  #{vb.value.to_s}  #{vb.value.asn1_type}"
+      return vb.value
     end
   end
 end
