@@ -1,1 +1,1 @@
-Device = Struct.new(:ip, :name)
+Device = Struct.new(:ip, :name, :supplies)
